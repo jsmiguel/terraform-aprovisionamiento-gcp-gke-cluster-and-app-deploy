@@ -6,15 +6,15 @@ terraform {
     google-beta = {
       source = "hashicorp/google-beta"
     }
-
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.7.0"
+    }
   }
 }
 
 provider "google" {
   region = "us-central1"
-  scopes = [
-    "cloud-platform"
-  ]
 }
 provider "google-beta" {
   region = "us-central1"

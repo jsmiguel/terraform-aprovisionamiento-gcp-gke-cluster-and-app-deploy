@@ -46,7 +46,7 @@ terraform init
 # Dry run to validate resources to create
 terraform plan
 # expected output:
-# Plan: 3 to add, 0 to change, 0 to destroy.
+# Plan: 5 to add, 0 to change, 0 to destroy.
 # Create resouces
 terraform apply
 # If you want destroy resouces
@@ -85,6 +85,25 @@ terraform init
 terraform plan
 # expected output:
 # Plan: 9 to add, 0 to change, 0 to destroy.
+# Create resouces
+terraform apply
+# If you want destroy resouces
+terraform destroy
+```
+
+## 4 - Deploy complete stack once
+
+Terraform manifests contains modules blocks to create a project and a GKE cluster plus resources to deploy same voting app trough k8s manifests
+
+```sh
+# Move to backend directory
+cd 4-project-gke-cluster-stack
+# Get plugins and modules
+terraform init
+# Dry run to validate resources to create
+terraform plan
+# expected output:
+# Plan: 15 to add, 0 to change, 0 to destroy.
 # Create resouces
 terraform apply
 # If you want destroy resouces

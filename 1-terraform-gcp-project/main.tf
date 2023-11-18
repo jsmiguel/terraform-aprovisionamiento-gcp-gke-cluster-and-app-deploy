@@ -11,12 +11,11 @@ resource "google_project" "my_project" {
 }
 
 resource "google_project_service" "enable-api" {
-  for_each = toset(var.gcp_apis)
+  for_each = toset(["compute.googleapis.com","container.googleapis.com","certificatemanager.googleapis.com"])
   project                    = google_project.my_project.id
   service                    = each.value
   disable_dependent_services = true
 }
-
 output "project_id" {
   value = google_project.my_project.id
 }

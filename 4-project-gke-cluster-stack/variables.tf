@@ -2,7 +2,7 @@ variable "project" {
   default = "sandbox-local-264"
 }
 variable "sandbox_id" {
-  
+
 }
 variable "location" {
   default = "us-central1"
@@ -16,7 +16,7 @@ variable "gke_node_config" {
     disk_size_gb = number
   })
   default = {
-      machine_type = "e2-standard-2"
-      disk_size_gb = 50
-    }
+    machine_type = "e2-standard-2"
+    disk_size_gb = 50
+  }
 }
